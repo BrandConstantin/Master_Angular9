@@ -5,10 +5,16 @@ import { Component } from '@angular/core';
     templateUrl: './server.component.html',
     styles: [`
         p{
-        color: darkred;
+            color: darkred;
         }
     `]
 })
 export class ServerComponent {
+    serverId: number = 4;
+    serverStatus: string = 'offline but working';
     title = 'MY FIRST Component (Server Component)';
+
+    getServerStatus(){
+        return this.serverStatus;
+    }
 }
