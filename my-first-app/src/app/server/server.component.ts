@@ -11,10 +11,19 @@ import { Component } from '@angular/core';
 })
 export class ServerComponent {
     serverId: number = 4;
-    serverStatus: string = 'offline but working';
+    serverStatus: string = 'offline';
     title = 'MY FIRST Component (Server Component)';
 
-    getServerStatus(){
+    constructor() {
+        this.serverStatus = Math.random() > 0.5 ? 'online' : 'offline';
+    }
+
+    getServerStatus() {
         return this.serverStatus;
     }
+
+    getColor() {
+        return this.serverStatus === 'online' ? 'green' : 'red';
+    }
+
 }
