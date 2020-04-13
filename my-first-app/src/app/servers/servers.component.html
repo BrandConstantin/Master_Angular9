@@ -9,7 +9,10 @@
         <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
         <!-- <p [innerText]="allowNewServer"></p> -->
 
-        <p>{{ serverCreationStatus }}</p>
+        <p *ngIf="serverCreated; else noServer">Server was created. Server name is {{ serverName }}</p>
+        <ng-template #noServer>
+            <p>No server was created</p>
+        </ng-template>
     </div>
     <div class="row col-xs-4"></div>
     <div class="row col-xs-4">
@@ -20,5 +23,11 @@
         <button class="btn btn-danger" [disabled]="userName === ''" (click)="userName = ''">Add User</button>
 
         <p>{{ createdUserName }}</p>
+    </div>
+    <div class="row col-xs-12">
+        <div class="row col-xs-14">
+            <app-server></app-server>
+        </div>
+        <div class="row col-xs-14"></div>
     </div>
 </div>
