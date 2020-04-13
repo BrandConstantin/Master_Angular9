@@ -25,9 +25,9 @@
         <p>{{ createdUserName }}</p>
     </div>
     <div class="row col-xs-12">
-        <div class="row col-xs-14">
-            <app-server></app-server>
+        <div class="row col-xs-4">
+            <app-server *ngFor="let server of servers"></app-server>
         </div>
-        <div class="row col-xs-14"></div>
+        <div class="row col-xs-4"></div>
     </div>
 </div>
