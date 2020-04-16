@@ -1,0 +1,15 @@
+<p>List of countries: </p>
+<ul>
+    <li *ngFor="let country of listOfCountries">{{country}}</li>
+</ul>
+
+<button class="btn btn-primary" (click)="onToogleButton()">Desplay
+</button>
+
+<p *ngIf="showCountries">{{count}}</p>
+<div *ngFor="let click of clicks" [ngStyle]="{backgroundColor: click >= 5 ? 'blue' : 'transparent'}"
+    [ngClass]="{'white-text': click >= 5}">{{click}}</div>
+
+<div *ngFor="let click of clicks; let i = index" 
+    [ngStyle]="{backgroundColor: i >= 5 ? 'blue' : 'transparent'}"
+    [ngClass]="{'white-text': i >= 5}">{{click}}</div>
