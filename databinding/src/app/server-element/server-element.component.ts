@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewEncapsulation, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation, OnChanges, DoCheck, SimpleChanges, AfterContentInit, AfterContentChecked, AfterViewChecked, AfterViewInit, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-server-element',
@@ -6,7 +6,7 @@ import { Component, OnInit, Input, ViewEncapsulation, OnChanges, SimpleChanges }
   styleUrls: ['./server-element.component.css'],
   encapsulation: ViewEncapsulation.Emulated
 })
-export class ServerElementComponent implements OnInit, OnChanges {
+export class ServerElementComponent implements OnInit, OnChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewChecked, AfterViewInit, OnDestroy {
   @Input('srvElement') element: {type: string, name: string, content: string}
   @Input() name: string;
 
@@ -23,4 +23,27 @@ export class ServerElementComponent implements OnInit, OnChanges {
     console.log('ngOnInit called');
   }
 
+  ngDoCheck(){
+    console.log('ngDoCheck called');
+  }
+
+  ngAfterContentInit(){
+    console.log('ngAfterContentInit called');
+  }
+
+  ngAfterContentChecked(){
+    console.log('ngAfterContentChecked called');
+  }
+
+  ngAfterViewChecked(){
+    console.log('ngAfterViewChecked called');
+  }
+
+  ngAfterViewInit(){
+    console.log('ngAfterViewInit called');
+  }
+
+  ngOnDestroy(){
+    console.log('NGONDESTROY called');
+  }
 }
